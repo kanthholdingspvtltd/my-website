@@ -1,82 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Website</title>
+    <title>ASTRIX | Personal Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <h2>My Website</h2>
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="logo">ASTRIX<span>.</span></a>
 
-            <div>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="blog.html">Blog</a>
-                <a href="#contact">Contact</a>
-            </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
 
-    <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
 
-        <section id="home">
-            <h1>Welcome to My Website</h1>
+        <div class="hero-content">
 
-            <p>
-                This is my first website, built from my phone.
+            <p class="small-text">WELCOME TO MY DIGITAL SPACE</p>
+
+            <h1>
+                Hi, I'm <span>Luvv</span>.
+            </h1>
+
+            <h2>
+                Student • Developer • Blogger
+            </h2>
+
+            <p class="hero-description">
+                Building projects, learning technology,
+                and sharing ideas along the way.
             </p>
 
-            <a href="#about" class="button">Explore</a>
-        </section>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">
+                    Explore My Work
+                </a>
+
+                <a href="blog.html" class="btn secondary">
+                    Read My Blog
+                </a>
+            </div>
+
+        </div>
+
+        <div class="scroll-indicator">
+            ↓ Scroll to explore
+        </div>
+
+    </section>
 
 
-        <section id="about">
-            <h2>About Me</h2>
+    <!-- About -->
+    <section id="about" class="section">
 
-            <p>
-                I'm learning web development and building this
-                website as a project for the future.
-            </p>
-        </section>
+        <div class="section-heading">
+            <p>01 — ABOUT</p>
+            <h2>Who I Am</h2>
+        </div>
 
+        <div class="about-grid">
 
-        <section id="projects">
-            <h2>My Projects</h2>
-
-            <div class="project">
-                <h3>My First Website</h3>
-
-                <p>
-                    A website created using HTML and CSS
-                    and deployed using GitHub Pages.
+            <div>
+                <p class="big-text">
+                    I'm a student interested in technology,
+                    programming, projects and ideas.
                 </p>
             </div>
-        </section>
+
+            <div>
+                <p>
+                    This website is my personal space where
+                    I can showcase what I'm building, document
+                    what I'm learning and publish articles.
+                </p>
+
+                <p>
+                    I'm continuously experimenting with
+                    web development and new technologies.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
 
 
-        <section id="contact">
-            <h2>Contact</h2>
+    <!-- Currently Building -->
+    <section class="status-section">
+
+        <div class="status-card">
+
+            <div class="status-dot"></div>
+
+            <div>
+                <p class="status-label">CURRENTLY BUILDING</p>
+
+                <h3>
+                    My Personal Website & Blog
+                </h3>
+
+                <p>
+                    Status: <span class="active">ACTIVE</span>
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+
+        <div class="section-heading">
+            <p>02 — PROJECTS</p>
+            <h2>Things I'm Building</h2>
+        </div>
+
+        <div class="projects-grid">
+
+            <article class="project-card">
+
+                <div class="project-number">01</div>
+
+                <h3>Personal Website</h3>
+
+                <p>
+                    A futuristic personal portfolio and blog
+                    built with HTML and CSS.
+                </p>
+
+                <span class="project-tech">
+                    HTML • CSS • GitHub Pages
+                </span>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-number">02</div>
+
+                <h3>Future Project</h3>
+
+                <p>
+                    A new project I'm planning to build
+                    and experiment with.
+                </p>
+
+                <span class="project-tech">
+                    COMING SOON
+                </span>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-number">03</div>
+
+                <h3>More Experiments</h3>
+
+                <p>
+                    New ideas, experiments and coding projects
+                    will appear here.
+                </p>
+
+                <span class="project-tech">
+                    IN DEVELOPMENT
+                </span>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Blog -->
+    <section class="section blog-section">
+
+        <div class="section-heading">
+            <p>03 — BLOG</p>
+            <h2>Latest Thoughts</h2>
+        </div>
+
+        <article class="featured-post">
+
+            <div class="post-tag">
+                FEATURED ARTICLE
+            </div>
+
+            <h3>
+                Should Yogi Adityanath Revive Hindu Yuva Vahini
+                Ahead of the 2027 UP Assembly Elections?
+            </h3>
 
             <p>
-                More contact options will be added here in the future.
+                An analysis of the organisation's history,
+                dissolution and the broader political context.
             </p>
-        </section>
 
-    </main>
+            <a href="blog.html" class="read-more">
+                Read Article →
+            </a>
+
+        </article>
+
+    </section>
 
 
+    <!-- Skills -->
+    <section class="section">
+
+        <div class="section-heading">
+            <p>04 — SKILLS</p>
+            <h2>What I'm Learning</h2>
+        </div>
+
+        <div class="skills">
+
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>GitHub</span>
+            <span>Web Development</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+
+        <p class="small-text">05 — CONTACT</p>
+
+        <h2>
+            Let's build something.
+        </h2>
+
+        <p>
+            More projects and experiments coming soon.
+        </p>
+
+        <a href="mailto:your-email@example.com" class="btn primary">
+            Get In Touch
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
     <footer>
-        <p>© 2026 My Website</p>
+
+        <div>
+            <strong>ASTRIX<span>.</span></strong>
+        </div>
+
+        <p>
+            © 2026 ASTRIX. Built with HTML & CSS.
+        </p>
+
     </footer>
 
 </body>
