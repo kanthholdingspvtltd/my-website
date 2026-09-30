@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DUSU Election 2026 | ASTRIX</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #f5f5f5;
+            line-height: 1.8;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(8, 8, 8, 0.85);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #7c5cff;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 70vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 20px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: #5d36ff;
+            opacity: 0.12;
+
+            filter: blur(150px);
+
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .tag {
+            color: #7c5cff;
+
+            font-size: 0.75rem;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+
+            line-height: 1.05;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 25px;
+        }
+
+        .subtitle {
+            color: #888;
+
+            font-size: 1.05rem;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+
+        /* ARTICLE */
+
+        article {
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 80px 7%;
+        }
+
+        .date {
+            color: #666;
+
+            font-size: 0.8rem;
+
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 2rem;
+
+            margin-top: 60px;
+
+            margin-bottom: 20px;
+
+            color: white;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+
+            margin-top: 35px;
+
+            margin-bottom: 10px;
+
+            color: #ddd;
+        }
+
+        p {
+            color: #aaa;
+
+            margin-bottom: 20px;
+        }
+
+        strong {
+            color: white;
+        }
+
+
+        /* RESULT TABLE */
+
+        .table-container {
+            overflow-x: auto;
+
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            background: #0d0d0d;
+
+            border: 1px solid #242424;
+        }
+
+        th,
+        td {
+            padding: 16px;
+
+            text-align: left;
+
+            border-bottom: 1px solid #222;
+        }
+
+        th {
+            color: #7c5cff;
+
+            font-size: 0.85rem;
+        }
+
+        td {
+            color: #bbb;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+
+        /* HIGHLIGHT BOX */
+
+        .highlight {
+            margin: 35px 0;
+
+            padding: 25px;
+
+            background: #0d0d0d;
+
+            border-left: 3px solid #7c5cff;
+
+            border-radius: 8px;
+        }
+
+        .highlight strong {
+            color: #7c5cff;
+        }
+
+
+        /* NUMBER CARDS */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin: 35px 0;
+        }
+
+        .stat {
+            padding: 25px;
+
+            background: #0d0d0d;
+
+            border: 1px solid #222;
+
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            display: block;
+
+            font-size: 1.8rem;
+
+            font-weight: bold;
+
+            color: #7c5cff;
+        }
+
+        .stat-label {
+            color: #777;
+
+            font-size: 0.8rem;
+        }
+
+
+        /* SOURCES */
+
+        .sources {
+            margin-top: 70px;
+
+            padding: 30px;
+
+            background: #0d0d0d;
+
+            border: 1px solid #222;
+
+            border-radius: 10px;
+        }
+
+        .sources h2 {
+            margin-top: 0;
+
+            font-size: 1.5rem;
+        }
+
+        .sources a {
+            color: #9b86ff;
+
+            text-decoration: none;
+        }
+
+        .sources a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            padding: 40px 7%;
+
+            text-align: center;
+
+            border-top: 1px solid #222;
+
+            color: #555;
+
+            font-size: 0.8rem;
+        }
+
+        footer strong {
+            color: white;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav a {
+                margin-left: 10px;
+
+                font-size: 0.7rem;
+            }
+
+            article {
+                padding: 60px 6%;
+            }
+
+            h1 {
+                letter-spacing: -1.5px;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            th,
+            td {
+                padding: 12px;
+
+                font-size: 0.8rem;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            ASTRIX<span>.</span>
+        </a>
+
+        <div>
+
+            <a href="index.html">Home</a>
+
+            <a href="blog.html">Blog</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                POLITICS • EDUCATION • DUSU 2026
+            </div>
+
+            <h1>
+                DUSU Election 2026:
+                Results, Key Candidates
+                and What Happened
+            </h1>
+
+            <p class="subtitle">
+                A factual look at the Delhi University Students'
+                Union election, its results, major candidates
+                and the issues that shaped the campaign.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ARTICLE -->
+
+    <article>
+
+        <p class="date">
+            Published September 2026 • ASTRIX
+        </p>
+
+
+        <p>
+            The Delhi University Students' Union (DUSU) election
+            is one of India's most closely followed student
+            elections. Thousands of students vote for
+            representatives who are expected to raise issues
+            concerning campus life, student welfare and
+            university administration.
+        </p>
+
+        <p>
+            The 2026 election was closely watched, with campaigns
+            focusing on issues including student housing,
+            campus infrastructure and safety. Major student
+            organisations including ABVP and NSUI competed
+            alongside independent candidates.
+        </p>
+
+        <p>
+            Voting took place on September 18, 2026, followed by
+            counting and declaration of the central-panel results
+            on September 19.
+        </p>
+
+
+        <!-- INTRO STATS -->
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <span class="stat-number">
+                    40.46%
+                </span>
+
+                <span class="stat-label">
+                    Reported voter turnout
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-number">
+                    4
+                </span>
+
+                <span class="stat-label">
+                    Central-panel positions
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-number">
+                    20
+                </span>
+
+                <span class="stat-label">
+                    Counting rounds
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SECTION -->
+
+        <h2>
+            What Is DUSU?
+        </h2>
+
+        <p>
+            The Delhi University Students' Union represents
+            students across the University of Delhi.
+        </p>
+
+        <p>
+            Its central panel consists of four major positions:
+        </p>
+
+        <ul>
+
+            <li>President</li>
+
+            <li>Vice-President</li>
+
+            <li>Secretary</li>
+
+            <li>Joint Secretary</li>
+
+        </ul>
+
+        <p>
+            These representatives are expected to raise student
+            concerns and participate in discussions relating to
+            student welfare and university affairs.
+        </p>
+
+
+        <!-- RESULTS -->
+
+        <h2>
+            The 2026 Election Results
+        </h2>
+
+        <p>
+            The final result produced a four-member central panel
+            with three positions going to ABVP-backed candidates
+            and one position going to an independent candidate.
+        </p>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Position</th>
+
+                        <th>Winner</th>
+
+                        <th>Organisation</th>
+
+                        <th>Votes</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>President</td>
+
+                        <td>Yash Dabas</td>
+
+                        <td>ABVP</td>
+
+                        <td>24,576</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Vice-President</td>
+
+                        <td>Deepanshu Shokeen</td>
+
+                        <td>Independent</td>
+
+                        <td>30,615</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Secretary</td>
+
+                        <td>Riya Chhawdi</td>
+
+                        <td>ABVP</td>
+
+                        <td>21,650</td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Joint Secretary</td>
+
+                        <td>Lakshya Raj Singh</td>
+
+                        <td>ABVP</td>
+
+                        <td>16,615</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- PRESIDENT -->
+
+        <h2>
+            Yash Dabas Wins the Presidency
+        </h2>
+
+        <p>
+            ABVP's Yash Dabas won the presidential contest with
+            24,576 votes.
+        </p>
+
+        <p>
+            NSUI candidate Vijay Shankar Meena received
+            22,523 votes, leaving a difference of 2,053 votes
+            between the two candidates.
+        </p>
+
+        <div class="highlight">
+
+            <strong>
+                Presidential result:
+            </strong>
+
+            Yash Dabas — 24,576 votes
+
+            <br>
+
+            Vijay Shankar Meena — 22,523 votes
+
+        </div>
+
+        <p>
+            During the election campaign and after the result,
+            student safety and accommodation were among the
+            issues discussed by the candidates.
+        </p>
+
+
+        <!-- SHOKEEN -->
+
+        <h2>
+            Deepanshu Shokeen: The Independent Candidate
+        </h2>
+
+        <p>
+            One of the most notable results of the 2026 election
+            was the victory of independent candidate
+            <strong>Deepanshu Shokeen</strong>.
+        </p>
+
+        <p>
+            Shokeen received 30,615 votes and defeated ABVP
+            candidate Ishu Maurya, who received 16,910 votes.
+        </p>
+
+        <div class="highlight">
+
+            <strong>
+                Vice-President result:
+            </strong>
+
+            <br><br>
+
+            Deepanshu Shokeen — 30,615
+
+            <br>
+
+            Ishu Maurya — 16,910
+
+            <br>
+
+            Vir Chatrath — 4,313
+
+        </div>
+
+        <p>
+            Shokeen had previously been associated with NSUI
+            and contested the 2026 election independently.
+            His campaign placed significant emphasis on student
+            accommodation and related safety concerns.
+        </p>
+
+
+        <!-- ABVP -->
+
+        <h2>
+            ABVP Takes Three of Four Posts
+        </h2>
+
+        <p>
+            ABVP secured three positions on the central panel:
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>President:</strong> Yash Dabas
+            </li>
+
+            <li>
+                <strong>Secretary:</strong> Riya Chhawdi
+            </li>
+
+            <li>
+                <strong>Joint Secretary:</strong>
+                Lakshya Raj Singh
+            </li>
+
+        </ul>
+
+        <p>
+            Riya Chhawdi won the secretary's election with
+            21,650 votes, while Lakshya Raj Singh won the joint
+            secretary contest with 16,615 votes.
+        </p>
+
+
+        <!-- NSUI -->
+
+        <h2>
+            What Happened to NSUI?
+        </h2>
+
+        <p>
+            NSUI contested all four central-panel positions but
+            did not win any of them.
+        </p>
+
+        <p>
+            Its presidential candidate Vijay Shankar Meena
+            finished second with 22,523 votes.
+        </p>
+
+        <p>
+            Namrata Chaudhary also finished second in the
+            secretary contest with 14,869 votes.
+        </p>
+
+        <p>
+            The result therefore showed that NSUI remained a
+            significant competitor in several individual races,
+            even though it did not secure a central-panel seat.
+        </p>
+
+
+        <!-- ISSUES -->
+
+        <h2>
+            The Issues Behind the Election
+        </h2>
+
+        <p>
+            DUSU elections are not only about student
+            organisations. Campaigns also focus on issues that
+            directly affect students.
+        </p>
+
+
+        <h3>
+            Student Housing
+        </h3>
+
+        <p>
+            Accommodation is a major concern for students who
+            move to Delhi from other parts of India. Hostel
+            availability, paying-guest accommodation and safety
+            can have a direct effect on student life.
+        </p>
+
+
+        <h3>
+            Campus Infrastructure
+        </h3>
+
+        <p>
+            Students also raise issues involving classrooms,
+            sanitation, water, internet connectivity and other
+            facilities.
+        </p>
+
+
+        <h3>
+            Safety
+        </h3>
+
+        <p>
+            Student safety became an important subject during
+            the 2026 campaign, particularly in discussions
+            surrounding hostel and PG accommodation.
+        </p>
+
+
+        <h3>
+            Student Representation
+        </h3>
+
+        <p>
+            Another important question is how effectively
+            elected representatives can communicate students'
+            concerns to the university administration.
+        </p>
+
+
+        <!-- INDEPENDENT FACTOR -->
+
+        <h2>
+            The Independent Factor
+        </h2>
+
+        <p>
+            Deepanshu Shokeen's victory demonstrated that an
+            independent candidate could win one of the four
+            central-panel positions.
+        </p>
+
+        <p>
+            The joint-secretary contest was also closely fought.
+            Lakshya Raj Singh received 16,615 votes, while
+            Samajwadi Chhatra Sabha candidate Vishesh Yadav
+            received 15,778 votes and NSUI candidate Gopal
+            Choudhary received 15,206.
+        </p>
+
+        <p>
+            These results show that individual races can have
+            very different dynamics even within the same
+            election.
+        </p>
+
+
+        <!-- LEFT -->
+
+        <h2>
+            What About the Left?
+        </h2>
+
+        <p>
+            Left student organisations also contested the
+            election.
+        </p>
+
+        <p>
+            Their candidates did not win a central-panel
+            position in the 2026 election, but their
+            participation contributed to a multi-candidate
+            contest rather than a simple two-way race.
+        </p>
+
+
+        <!-- MEANING -->
+
+        <h2>
+            What Does the Result Mean?
+        </h2>
+
+        <p>
+            The election produced several notable outcomes.
+        </p>
+
+        <p>
+            First, ABVP secured three of the four central-panel
+            positions.
+        </p>
+
+        <p>
+            Second, Deepanshu Shokeen won the vice-president's
+            position as an independent candidate.
+        </p>
+
+        <p>
+            Third, some contests were relatively close,
+            particularly the presidential and joint-secretary
+            races.
+        </p>
+
+        <p>
+            Together, these results provide a picture of a
+            competitive student election involving established
+            organisations and independent candidates.
+        </p>
+
+
+        <!-- WHAT NEXT -->
+
+        <h2>
+            What Comes Next?
+        </h2>
+
+        <p>
+            The campaign is over, but the work of the elected
+            representatives has only begun.
+        </p>
+
+        <p>
+            Students will be able to judge the new union over
+            the coming academic year by looking at what it does
+            after taking office.
+        </p>
+
+        <p>
+            Questions surrounding accommodation, safety,
+            infrastructure and student representation are likely
+            to remain relevant.
+        </p>
+
+        <p>
+            The election result provides the starting point.
+            The actions of the elected representatives will
+            determine what happens next.
+        </p>
+
+
+        <!-- CONCLUSION -->
+
+        <h2>
+            Conclusion
+        </h2>
+
+        <p>
+            DUSU Election 2026 produced several different
+            stories within a single election.
+        </p>
+
+        <p>
+            ABVP won the president, secretary and joint-secretary
+            positions, while independent candidate Deepanshu
+            Shokeen won the vice-president's post.
+        </p>
+
+        <p>
+            The election also brought student housing, safety,
+            infrastructure and representation into focus.
+        </p>
+
+        <p>
+            For students, however, the most important part of
+            the election begins after the votes have been
+            counted.
+        </p>
+
+        <div class="highlight">
+
+            <strong>
+                The ballots have been counted.
+                Now the promises have to be tested.
+            </strong>
+
+        </div>
+
+
+        <!-- SOURCES -->
+
+        <div class="sources">
+
+            <h2>
+                Sources
+            </h2>
+
+            <p>
+                The article's factual election information was
+                checked against contemporary reporting from:
+            </p>
+
+            <p>
+                •
+                <a href="https://indianexpress.com/"
+                   target="_blank">
+                    The Indian Express
+         
